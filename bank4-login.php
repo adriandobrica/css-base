@@ -42,9 +42,9 @@
 				<div class="collapse navbar-collapse" id="navigator">
 					<ul class="nav navbar-nav">
 						<li><a href="index.php">Level 1</a></li>
-						<li class="active"><a href="bank2-login.php">Level 2</a></li>
+						<li><a href="bank2-login.php">Level 2</a></li>
 						<li><a href="bank3-login.php">Level 3</a></li>
-						<li><a href="bank4-login.php">Level 4</a></li>
+						<li class="active"><a href="bank4-login.php">Level 4</a></li>
 					</ul>
 
 					<div class="col-sm-3 col-sm-3">
@@ -73,7 +73,7 @@
 		</div>
 
 		<div class="container">
-		  <form action="bank2.php" role="form" method="post">
+		  <form action="bank4.php" role="form" method="post">
 		    <div class="form-group">
 		      <label for="name">Username:</label>
 		      <input type="name" class="form-control" id="name" placeholder="Enter username" name="name">

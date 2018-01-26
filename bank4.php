@@ -4,12 +4,19 @@ session_start();
 if(isset($_SESSION["name"])==FALSE)
 	$_SESSION["name"] = $_POST["name"];
 
+if(isset($_SESSION["token"]) == FALSE)
+	$_SESSION["token"] = sha1(uniqid(mt_rand(0,100000)));
+
 if(isset($_SESSION["sum"]) == FALSE)
 	$_SESSION["sum"] = 1000;
 
 if(isset($_POST["amount"]))
 {
-	$_SESSION["sum"] = $_SESSION["sum"] - $_POST["amount"];
+	if(isset($_POST["token"]))
+	{
+		if($_POST["token"] === $_SESSION["token"])
+			$_SESSION["sum"] = $_SESSION["sum"] - $_POST["amount"];
+	}
 }
 
 $neg_balance = '"color:red;font-weight: bold;font-size: 160%;"';
@@ -47,6 +54,10 @@ $name = $_SESSION["name"];
 #{
 #	$val = $val - $_GET["amount"];
 #}
+
+
+$token = sha1(uniqid(mt_rand(0,100000)));
+$_SESSION["token"] = $token;
 
 ?>
 <!DOCTYPE html>
@@ -93,9 +104,9 @@ $name = $_SESSION["name"];
 				<div class="collapse navbar-collapse" id="navigator">
 					<ul class="nav navbar-nav">
 						<li><a href="index.php">Level 1</a></li>
-						<li class="active"><a href="bank2-login.php">Level 2</a></li>
+						<li><a href="bank2-login.php">Level 2</a></li>
 						<li><a href="bank3-login.php">Level 3</a></li>
-						<li><a href="bank4-login.php">Level 4</a></li>
+						<li class="active"><a href="bank4-login.php">Level 4</a></li>
 					</ul>
 
 					<div class="col-sm-3 col-sm-3">
@@ -126,7 +137,7 @@ $name = $_SESSION["name"];
 		</div>
 
 		<div class="container">
-		  <form action="<?php ?>" role="form" method="post">
+		  <form action="<?php ?>" role="form" method="POST">
 		    <div class="form-group">
 		      <label for="name">Balance:</label> <span style=<?php if($_SESSION["sum"] > 0 )echo $pos_balance; else echo $neg_balance; ?>><?php echo $_SESSION["sum"]; ?> lei</span>
 		     
@@ -144,6 +155,7 @@ $name = $_SESSION["name"];
 		    <div class="form-group">
 		    	<button type="submit" class=<?php if($_SESSION["sum"] > 0 )echo $pos_btn; else echo $neg_btn; ?>>Transfer Money</button>
 		    </div>
+		      <input type="hidden" name="token" value=<?php echo $token; ?>>
 		  </form>
 		</div>
 
@@ -161,17 +173,43 @@ $name = $_SESSION["name"];
 						<div id="collapse-1" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="list-group">
-									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank2.php&quot; method=&quot;POST&quot;&gt;
+									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank4.php&quot; method=&quot;POST&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;attacker&quot; value=&quot;100000&quot;/&gt;
 &lt;input type=&quot;submit&quot; value=&quot;Win a prize&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;<?php echo $token; ?>&quot;&gt;
 &lt;/form&gt;</code></pre></li>
 								</ul>
 								<div class="alert alert-warning alert-dismissable">
   									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  									Create a site with the form and bait the victim to access it.
+  									Create a site with the form and bait the victim to access it. Do not forget about the token! Make sure you &quot;guess&quot; the token.
   								</div>
 							</div>
 						</div><!-- End Panel collapse -->						
+					</div>
+				</div>
+			</div>
+		
+
+			<div class="panel-group" id="accordion2">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<div class="panel-title">
+							<a href="#collapse-2" data-toggle="collapse" data-parent="#accordion2">
+								+ Hint 2
+							</a>
+						</div><!-- End panel title -->
+
+						<div id="collapse-2" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="list-group">
+									<li class="list-group-item "><code>&lt;img src=http://localhost/bank4.php?destname=attacker&amp;amount=5000&gt;</code></li>
+								</ul>
+								<div class="alert alert-danger alert-dismissable">
+  									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  									Perform a XSS attack.
+  								</div>							
+							</div>
+						</div><!-- End Panel collapse -->	
 					</div>
 				</div>
 			</div>

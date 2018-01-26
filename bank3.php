@@ -106,6 +106,7 @@ $_SESSION["token"] = $token;
 						<li><a href="index.php">Level 1</a></li>
 						<li><a href="bank2-login.php">Level 2</a></li>
 						<li class="active"><a href="bank3-login.php">Level 3</a></li>
+						<li><a href="bank4-login.php">Level 4</a></li>
 					</ul>
 
 					<div class="col-sm-3 col-sm-3">
@@ -172,7 +173,7 @@ $_SESSION["token"] = $token;
 						<div id="collapse-1" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="list-group">
-									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank1.php&quot; method=&quot;POST&quot;&gt;
+									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank3.php&quot; method=&quot;POST&quot;&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;attacker&quot; value=&quot;100000&quot;/&gt;
 &lt;input type=&quot;submit&quot; value=&quot;Win a prize&quot;/&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;<?php echo $token; ?>&quot;&gt;
@@ -201,7 +202,7 @@ $_SESSION["token"] = $token;
 						<div id="collapse-2" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="list-group">
-									<li class="list-group-item "><code>&lt;img src=http://localhost/bank1.php?destname=attacker&amp;amount=5000&gt;</code></li>
+									<li class="list-group-item "><code>&lt;img src=http://localhost/bank3.php?destname=attacker&amp;amount=5000&gt;</code></li>
 								</ul>
 								<div class="alert alert-danger alert-dismissable">
   									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

@@ -44,6 +44,7 @@
 						<li class="active"><a href="index.php">Level 1</a></li>
 						<li><a href="bank2-login.php">Level 2</a></li>
 						<li><a href="bank3-login.php">Level 3</a></li>
+						<li><a href="bank4-login.php">Level 4</a></li>
 					</ul>
 
 					<div class="col-sm-3 col-sm-3">
