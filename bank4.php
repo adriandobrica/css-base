@@ -188,31 +188,6 @@ $_SESSION["token"] = $token;
 					</div>
 				</div>
 			</div>
-		
-
-			<div class="panel-group" id="accordion2">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="panel-title">
-							<a href="#collapse-2" data-toggle="collapse" data-parent="#accordion2">
-								+ Hint 2
-							</a>
-						</div><!-- End panel title -->
-
-						<div id="collapse-2" class="panel-collapse collapse">
-							<div class="panel-body">
-								<ul class="list-group">
-									<li class="list-group-item "><code>&lt;img src=http://localhost/bank4.php?destname=attacker&amp;amount=5000&gt;</code></li>
-								</ul>
-								<div class="alert alert-danger alert-dismissable">
-  									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  									Perform a XSS attack.
-  								</div>							
-							</div>
-						</div><!-- End Panel collapse -->	
-					</div>
-				</div>
-			</div>
 		</div>
 	</body>
 </html>

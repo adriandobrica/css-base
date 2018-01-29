@@ -174,7 +174,7 @@ $_SESSION["token"] = $token;
 							<div class="panel-body">
 								<ul class="list-group">
 									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank3.php&quot; method=&quot;POST&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;attacker&quot; value=&quot;100000&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;100000&quot;/&gt;
 &lt;input type=&quot;submit&quot; value=&quot;Win a prize&quot;/&gt;
 &lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;<?php echo $token; ?>&quot;&gt;
 &lt;/form&gt;</code></pre></li>
@@ -185,31 +185,6 @@ $_SESSION["token"] = $token;
   								</div>
 							</div>
 						</div><!-- End Panel collapse -->						
-					</div>
-				</div>
-			</div>
-		
-
-			<div class="panel-group" id="accordion2">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<div class="panel-title">
-							<a href="#collapse-2" data-toggle="collapse" data-parent="#accordion2">
-								+ Hint 2
-							</a>
-						</div><!-- End panel title -->
-
-						<div id="collapse-2" class="panel-collapse collapse">
-							<div class="panel-body">
-								<ul class="list-group">
-									<li class="list-group-item "><code>&lt;img src=http://localhost/bank3.php?destname=attacker&amp;amount=5000&gt;</code></li>
-								</ul>
-								<div class="alert alert-danger alert-dismissable">
-  									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  									Perform a XSS attack.
-  								</div>							
-							</div>
-						</div><!-- End Panel collapse -->	
 					</div>
 				</div>
 			</div>
