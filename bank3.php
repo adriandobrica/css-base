@@ -10,12 +10,12 @@ if(isset($_SESSION["token"]) == FALSE)
 if(isset($_SESSION["sum"]) == FALSE)
 	$_SESSION["sum"] = 1000;
 
-if(isset($_POST["amount"]))
+if(isset($_GET["amount"]))
 {
-	if(isset($_POST["token"]))
+	if(isset($_GET["token"]))
 	{
-		if($_POST["token"] === $_SESSION["token"])
-			$_SESSION["sum"] = $_SESSION["sum"] - $_POST["amount"];
+		if($_GET["token"] === $_SESSION["token"])
+			$_SESSION["sum"] = $_SESSION["sum"] - $_GET["amount"];
 	}
 }
 

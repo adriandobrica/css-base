@@ -162,7 +162,7 @@ $name = $_SESSION["name"];
 							<div class="panel-body">
 								<ul class="list-group">
 									<li class="list-group-item "><pre><code>&lt;form action=&quot;http://localhost/bank2.php&quot; method=&quot;POST&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;attacker&quot; value=&quot;100000&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;amount&quot; value=&quot;100000&quot;/&gt;
 &lt;input type=&quot;submit&quot; value=&quot;Win a prize&quot;/&gt;
 &lt;/form&gt;</code></pre></li>
 								</ul>
